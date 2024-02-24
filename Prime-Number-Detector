@@ -1,0 +1,15 @@
+#This program distinguishes prime numbers
+
+number = int(input("Please Enter the Number: "))
+
+if number == 1: 
+    print("Number 1 is not a prime number")
+
+for i in range(2, int(number/2)):
+    if (number % i) == 0:
+        print(number, "is not prime")
+        break
+else:
+    print(number, "is prime")
+
+        
