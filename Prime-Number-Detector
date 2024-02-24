@@ -1,4 +1,4 @@
-#This program distinguishes prime numbers
+#This program distinguishes prime numbers. It takes a number from the user as the input and checks if it is prime or not.
 
 number = int(input("Please Enter the Number: "))
 
