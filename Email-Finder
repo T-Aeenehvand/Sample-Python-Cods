@@ -1,5 +1,6 @@
-#The email search program efficiently scans through a given text or file to identify and extract all valid email addresses,
-#compiling them into a comprehensive list for easy reference. Additionally, the program maintains a record of the emails it has found.
+#The email search program efficiently scans through a given text or file to identify and extract all valid email addresses 
+#according to the defined pattern,compiling them into a comprehensive list for easy reference. Additionally, the program 
+#maintains a record of the emails it has found.
 
 import re
 pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
