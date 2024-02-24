@@ -1,0 +1,17 @@
+#The email search program efficiently scans through a given text or file to identify and extract all valid email addresses,
+#compiling them into a comprehensive list for easy reference. Additionally, the program maintains a record of the emails it has found.
+
+import re
+pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+fileName = input('Enter file name: ')
+fh = open(fileName)
+count = 0
+emailsList = []
+for line in fh:
+    emails = re.findall(pattern, line)
+    if len(emails) < 1: continue
+    #print(emails[0])
+    emailsList.append(emails[0])
+    count+= 1
+print(count, " record has been found in ", fileName, "file and here is the list of emails: ", emailsList)
