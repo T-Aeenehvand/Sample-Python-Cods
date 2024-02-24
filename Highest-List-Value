@@ -1,0 +1,9 @@
+#This program finds the highest value in the list given by the user. It takes a list of numbers as input and gives back the highest value of them.
+
+list = list(map(int, input("Enter multiple values divided by space: ").split()))
+highest = list[0]
+
+for num in list:
+    if num > highest:
+        highest = num
+print("The biggest number in this list is ", highest)
