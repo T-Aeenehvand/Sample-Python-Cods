@@ -1,8 +1,7 @@
 # This program searches through an XML doc entered by the user and retrieves the asked data. In this case, in the data tree, I asked for the summation of 
 # the "comment" part located in the third branch of tree.
 
-
-
+# Importing libraries to open URL(urllib) and reading through XML(xml.etree.ElementTree)
 import urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
 import ssl
