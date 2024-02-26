@@ -1,0 +1,33 @@
+# This program searches through an XML doc entered by the user and retrieves the asked data. In this case, in the data tree, I asked for the summation of 
+# the "comment" part located in the third branch of tree.
+
+
+
+import urllib.request, urllib.parse, urllib.error
+import xml.etree.ElementTree as ET
+import ssl
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+
+url = input('Enter the XML File Location: ')
+data = urllib.request.urlopen(url, context=ctx).read()
+print('Retrieving', url)
+print('Retrieved', len(data), 'characters')
+
+# This command helps reading through the XML syntax
+tree = ET.fromstring(data)
+comments = tree.findall('.//comment')
+
+
+toll = 0
+summation = 0
+for comment in comments:
+    summation = summation + int(comment.find('count').text)
+    toll += 1
+    
+print('Count ', toll )
+print('Sum ', summation )
