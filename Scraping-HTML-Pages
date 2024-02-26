@@ -1,0 +1,29 @@
+# This program asks the user for an HTML webpage URL and browse through its tags looking for a specified tag (here the tag is "span")
+# and retrieves the content of it. Then in a for loop, due to the numeric content of the tag, concatenates all of the span tag's values
+# and gives the summation and the count of them. 
+
+# Importing libraries to open URL(urllib) and reading through messy HTML syntax(BeautifulSoup)
+from urllib.request import urlopen
+import BeautifulSoup
+import ssl
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter the URL Please - ')
+html = urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, "html.parser")
+
+# Searching for a specific tag "span"
+tags = soup('span')
+summ = 0
+count =0
+
+# Reaching ti the content of tags with a for loop
+for tag in tags:
+    summ = summ + int(tag.contents[0])
+    count = count + 1
+print('Count ', count)
+print('Sum ', summ)
